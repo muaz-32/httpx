@@ -21,6 +21,8 @@ jobs:
         run: pip install tox
       - name: Run tox
         run: tox -e py
+      - name: Show coverage report
+        run: cat coverage.xml || echo "coverage.xml not found"
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v5
         env:
